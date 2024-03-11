@@ -67,7 +67,6 @@ function removeProperties(obj, keys) {
   });
   return copyObj;
 }
-// throw new Error('Not implemented');
 
 /**
  * Compares two source objects. Returns true if the objects are equal and false otherwise.
@@ -81,9 +80,15 @@ function removeProperties(obj, keys) {
  *    compareObjects({a: 1, b: 2}, {a: 1, b: 2}) => true
  *    compareObjects({a: 1, b: 2}, {a: 1, b: 3}) => false
  */
-function compareObjects(/* obj1, obj2 */) {
-  throw new Error('Not implemented');
+function compareObjects(obj1, obj2) {
+  const obj1Keys = Object.getOwnPropertyNames(obj1);
+  const obj2Keys = Object.getOwnPropertyNames(obj2);
+  if (obj1Keys.length !== obj2Keys.length) return false;
+  return obj1Keys.every((key) => {
+    return obj1[key] === obj2[key];
+  });
 }
+// throw new Error('Not implemented');
 
 /**
  * Checks if the source object is empty.
