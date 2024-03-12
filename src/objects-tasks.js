@@ -88,7 +88,6 @@ function compareObjects(obj1, obj2) {
     return obj1[key] === obj2[key];
   });
 }
-// throw new Error('Not implemented');
 
 /**
  * Checks if the source object is empty.
@@ -101,8 +100,8 @@ function compareObjects(obj1, obj2) {
  *    isEmptyObject({}) => true
  *    isEmptyObject({a: 1}) => false
  */
-function isEmptyObject(/* obj */) {
-  throw new Error('Not implemented');
+function isEmptyObject(obj) {
+  return !(Object.keys(obj).length > 0);
 }
 
 /**
