@@ -160,6 +160,12 @@ function makeWord(lettersObject) {
  *    sellTickets([25, 100]) => false (The seller does not have enough money to give change.)
  */
 function sellTickets(/* queue */) {
+  // const change = {
+  //   25: 0,
+  //   50: 0,
+  // };
+
+  // queue.forEach((payment) => {});
   throw new Error('Not implemented');
 }
 
@@ -176,8 +182,12 @@ function sellTickets(/* queue */) {
  *    console.log(r.height);      // => 20
  *    console.log(r.getArea());   // => 200
  */
-function Rectangle(/* width, height */) {
-  throw new Error('Not implemented');
+function Rectangle(width, height) {
+  this.width = width;
+  this.height = height;
+  this.getArea = () => {
+    return this.width * this.height;
+  };
 }
 
 /**
